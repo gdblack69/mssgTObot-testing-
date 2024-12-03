@@ -1,9 +1,13 @@
+from keep_alive import keep_alive  # Correct import to keep the bot alive via Flask
 from telethon import TelegramClient, events
 import os
 import asyncio
 import traceback
 from flask import Flask, request, jsonify
 from threading import Thread
+
+# Start the keep_alive server
+keep_alive()  # Start the Flask server to keep the bot alive
 
 # API credentials for source chat
 SOURCE_API_ID = os.getenv('SOURCE_API_ID')
